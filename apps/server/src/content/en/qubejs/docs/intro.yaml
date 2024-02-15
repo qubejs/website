@@ -1,0 +1,24 @@
+template: apps/core/templates/page
+className: sq-page sq-docs-events
+bodyClassName: sq-page--fixed-nav
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+container: ContentWithLeftNavigation
+title: Introduction
+overrideTransition: true
+order: 1
+category: _root
+items:
+  - header: |
+      Introduction 
+    component: Header
+    subHeader: QubeJS is a full stack framework which allows you to build application with react very fast our built-in CMS + App combination gives you flexibility that app can be exported on all platforms with single codebase.
+  - header: |
+      Part 1: Install
+    className: sq-header--blockquote sq-header--no-padding 
+    headerTag: h3
+    component: Header
+  - component: CodeHighlight
+    className: mb-xtrawide
+    code: |
+      npm install qubejs-core --save

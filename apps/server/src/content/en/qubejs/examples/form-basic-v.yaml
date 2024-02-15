@@ -1,0 +1,77 @@
+template: apps/core/templates/grid-example
+class: sq-page-examples
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+overrideTransition: true
+container: ContentWithLeftNavigation
+title: Form with Validations
+category: 1::Form
+items:
+  - component: Form
+    name: testform
+    fields:
+      - cmpType: Input
+        label: First Name
+        name: firstName
+        validators:
+          - type: required
+      - cmpType: Input
+        name: lastName
+        label: Last Name
+        validators:
+          - type: required
+      - cmpType: Input
+        name: phone
+        label: Phone (optional)
+        validators:
+          - type: phone
+      - cmpType: Input
+        name: emailId
+        label: Last Name
+        validators:
+          - type: required
+          - type: email
+    actions:
+      - actionType: submit-form
+        buttonText: Save
+        url: /api/v1/save
+        method: post
+        params:
+          firstName: .testform.firstName
+          lastName: .testform.lastName
+  - component: CodeHighlight
+    code: |
+          - component: Form
+            name: testform
+            fields:
+              - cmpType: Input
+                label: First Name
+                name: firstName
+                validators:
+                  - type: required
+              - cmpType: Input
+                name: lastName
+                label: Last Name
+                validators:
+                  - type: required
+              - cmpType: Input
+                name: phone
+                label: Phone (optional)
+                validators:
+                  - type: phone
+              - cmpType: Input
+                name: emailId
+                label: Last Name
+                validators:
+                  - type: required
+                  - type: email
+            actions:
+              - actionType: submit-form
+                buttonText: Save
+                url: /api/v1/save
+                method: post
+                params:
+                  firstName: .testform.firstName
+                  lastName: .testform.lastName
+                  emailId: .testform.emailId
+                  phone: .testform.phone

@@ -1,0 +1,84 @@
+@import '~@qubejs/web-react/src/styles/abstract/_variables.scss';
+
+$sq-color-muted-zblack: #000;
+// Colors
+$sq-color-primary: #5418b5;
+$sq-color-primary-lightest: lighten($sq-color-primary, 45%);
+$sq-color-primary-lighter: lighten($sq-color-primary, 35%);
+$sq-color-primary-light: lighten($sq-color-primary, 25%);
+$sq-color-primary-medium: lighten($sq-color-primary, 13%);
+$sq-color-primary-dark: darken($sq-color-primary, 2%);
+$sq-color-primary-darker: darken($sq-color-primary, 5%);
+$sq-color-primary-darkest: darken($sq-color-primary, 10%);
+
+$sq-color-secondary: #5a5a5a;
+$sq-color-secondary-lightest: lighten($sq-color-secondary, 45%);
+$sq-color-secondary-lighter: lighten($sq-color-secondary, 35%);
+$sq-color-secondary-light: lighten($sq-color-secondary, 25%);
+$sq-color-secondary-medium: lighten($sq-color-secondary, 13%);
+$sq-color-secondary-dark: darken($sq-color-secondary, 2%);
+$sq-color-secondary-darker: darken($sq-color-secondary, 5%);
+$sq-color-secondary-darkest: darken($sq-color-secondary, 10%);
+
+//** Global textual link color.
+$link-color:            #6E2ADD;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 10%);
+
+$primary: $sq-color-primary;
+$secondary: $sq-color-secondary;
+$success: $sq-color-success;
+$info: $sq-color-info;
+$warning: $sq-color-warning;
+$danger: $sq-color-error;
+$light: $gray-100;
+$dark: $gray-800;
+
+$brand-primary: $sq-color-primary; // #337ab7
+$brand-success: $sq-color-success;
+$brand-info: $sq-color-info;
+$brand-warning: $sq-color-warning;
+$brand-danger: $sq-color-error;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark
+  ),
+  $theme-colors
+);
+
+// Global FOoter
+
+$sq-footer-background-color: $sq-color-muted-lightest;
+$sq-footer-background-color-dark: $sq-color-primary-darkest;
+
+// Global Navigation
+$sq-global-navigation-background-color: $sq-color-muted-lightest;
+$sq-global-navigation-background-color-dark: $sq-color-primary-darkest;
+
+
+// Colors for avatar background
+$color-avatar-1:#FFB900;
+$color-avatar-2:#D83B01;
+$color-avatar-3:#B50E0E;
+$color-avatar-4:#E81123;
+$color-avatar-5:#B4009E;
+$color-avatar-6:#5C2D91;
+$color-avatar-7:#0078D7;
+$color-avatar-8:#00B4FF;
+$color-avatar-9:#008272;
+$color-avatar-10:#107C10;
+
+:root {
+  --header-font-family: 'Lato-Regular';
+  --paragraph-font-family: 'Lato-Light';
+  --text-font-family: 'Lato-Light';
+}

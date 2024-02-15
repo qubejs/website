@@ -1,0 +1,19 @@
+title: Message sent
+template: apps/core/templates/page
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+  - header: | 
+      Message sent successfully
+    subHeader: |
+      We have received your message and respond you shortly.
+    component: HeroContent
+    className: sq-hero-content--center-aligned
+    links:
+      - buttonText: Back to Home
+        type: Button
+        size: large
+        color: secondary
+        variant: outlined
+        iconDirection: left
+        to: home

@@ -1,0 +1,21 @@
+title: QubeJS Features
+template: apps/core/templates/page
+rootClassName: sq-content-page--full-width
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+
+  - header: | 
+      Landing pages
+    subHeader: |
+      Create vesatile landing pages with just no time
+    component: HeroContent
+    className: sq-hero-content--left-aligned
+    imageUrl: https://media.istockphoto.com/id/1160293860/vector/website-template-design-landing-page-modern-design-for-website-vector-illustration.jpg?s=612x612&w=0&k=20&c=-WLEazEVXRtELHe9enZpSU2Hsyho_SHlN-EjIAPgNjA=
+  - header: | 
+      Feedback form
+    subHeader: |
+      Create dynamic forms, validations just with click
+    component: HeroContent
+    className: sq-hero-content--right-aligned
+    imageUrl: https://uxdt.nic.in/wp-content/uploads/2020/08/feedback_form_4_p.png?x93453

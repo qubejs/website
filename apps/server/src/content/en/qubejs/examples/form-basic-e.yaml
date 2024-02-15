@@ -1,0 +1,53 @@
+template: apps/core/templates/grid-example
+class: sq-page-examples
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+overrideTransition: true
+container: ContentWithLeftNavigation
+title: Basic Form
+category: 1::Form
+items:
+  - component: Form
+    name: testform
+    fields:
+      - cmpType: Input
+        label: First Name
+        name: firstName
+      - cmpType: Input
+        name: lastName
+        label: Last Name
+    actions:
+      - actionType: submit-form
+        buttonText: Save
+        url: /api/v1/save
+        method: post
+        params:
+          firstName: .testform.firstName
+          lastName: .testform.lastName
+      - actionType: redirect
+        buttonText: Cancel
+        variant: outlined
+        to: /content/en/qubejs/examples
+  - component: CodeHighlight
+    code: |
+        - component: Form
+          name: testform
+          fields:
+            - cmpType: Input
+              label: First Name
+              name: firstName
+            - cmpType: Input
+              name: lastName
+              label: Last Name
+          actions:
+            - actionType: submit-form
+              buttonText: Save
+              url: /api/v1/save
+              method: post
+              params:
+                firstName: .testform.firstName
+                lastName: .testform.lastName
+            - actionType: redirect
+              buttonText: Cancel
+              variant: outlined
+              to: /content/en/qubejs/examples

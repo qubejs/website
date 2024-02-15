@@ -1,0 +1,11 @@
+.documentation-docs {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: $screen-sm) {
+    flex-wrap: nowrap;
+  }
+  > div {
+    flex:1 1;
+    flex-basis: 100%;
+  }
+}

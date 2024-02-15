@@ -1,0 +1,27 @@
+{
+    "/api": {
+      "changeOrigin": true,
+      "cookieDomainRewrite": "localhost",
+      "target": "http://localhost:4610"
+    },
+    "/env": {
+      "changeOrigin": true,
+      "cookieDomainRewrite": "localhost",
+      "target": "http://localhost:4610"
+    },
+    "/client": {
+      "changeOrigin": true,
+      "cookieDomainRewrite": "localhost",
+      "target": "http://localhost:4610"
+    },
+    "/content": {
+      "changeOrigin": true,
+      "cookieDomainRewrite": "localhost",
+      "target": "http://localhost:4610"
+    },
+    "/dam": {
+      "changeOrigin": true,
+      "cookieDomainRewrite": "localhost",
+      "target": "http://localhost:4610"
+    }
+  }

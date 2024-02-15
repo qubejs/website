@@ -1,0 +1,3 @@
+title: Default page
+template: apps/core/templates/page
+layout: apps/qubejs/layouts/page-spa

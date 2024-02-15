@@ -1,0 +1,33 @@
+template: apps/core/templates/page
+className: sq-page sq-docs-events
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+bodyClassName: sq-page--fixed-nav
+container: Documentation
+overrideTransition: true
+title: Events
+order: 3
+category: API
+itemTemplate: Event
+items:
+    - group: Code View
+      name: onRender
+      description: Opens the popup
+      returns: Object
+      inputs:
+        - name: slider
+          type: object
+          description: Opens the po
+      example: new SQDateRangeSlider('#slider', {})
+    - group: Code View
+      name: onChange
+      description: Close the popup
+      returns: Object
+      inputs:
+        - name: slider
+          type: Object
+        - name: value
+          type: Object
+        - name: dom
+          type: Dom
+      example: new SQDateRangeSlider('#slider', {})

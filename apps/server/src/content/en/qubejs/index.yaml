@@ -1,0 +1,13 @@
+title: QubeJs
+template: apps/core/templates/page
+className: sq-page-qubejs-home
+bodyClassName: sq-page--fixed-nav
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+    - header: Smart, Fast and Extensible Framework <div>For all your needs</div>
+      classes:
+        root: container
+      subHeader: A Low code platform with first class application builder with customized web/app development. One codebase export to web/android/ios.
+      className: sq-hero-content--center-aligned
+      component: HeroContent  

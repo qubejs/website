@@ -1,0 +1,64 @@
+title: Contact
+template: apps/core/templates/page
+className: sq-page
+contentBodyClass: container-form container
+layout: apps/qubejs/layouts/page-spa
+bodyClassName: sq-content-page__body-wrapper
+containerTemplate: Homepage
+reset:
+  type: clearAll
+items:
+  - component: Header
+    header: Contact us
+  - component: Form
+    name: email
+    fields:
+      - cmpType: Input
+        label: Full Name
+        name: fullName
+        validators:
+          - type: required
+
+      - cmpType: Input
+        label: Email
+        name: email
+        validators:
+          - type: required
+          - type: email
+      - cmpType: Input
+        label: Contact Number (optional)
+        name: phone
+        validators:
+          - type: internationalphone
+      - cmpType: Input
+        label: Subject
+        name: subject
+        validators:
+          - type: required
+      - cmpType: RichText
+        editorStyle: basic
+        label: Message
+        name: body
+        validators:
+          - type: required
+  - component: Button
+    buttonText: Submit
+    className: mb-jumbo
+    size: large
+    actionType: submit
+    color: primary
+    inject:
+      disabled: isSubmitting
+    url: /api/contact.php
+    defaultResponse:
+      success:
+        data:
+          redirect: messagesent
+    method: post
+    params:
+      fullName: .email.fullName
+      email: .email.email
+      phone: .email.phone
+      subject: .email.subject
+      body: .email.body
+     

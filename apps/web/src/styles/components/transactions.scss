@@ -1,0 +1,83 @@
+.transactions-grid {
+  .sq-grid-cmp__data-row {
+    flex-wrap: wrap;
+    flex: 1 1 30%;
+    @media (min-width: $screen-sm) {
+    }
+  }
+  .col-icon {
+    flex-basis: 24px;
+    flex: 0 1 24px;
+    align-items: flex-start;
+    padding: 0;
+    @media (min-width: $screen-sm) {
+    }
+  }
+  .col-amount {
+    padding: 0;
+    &.med {
+      @include b4-style();
+      @media (min-width: $screen-sm) {
+        @include b3-style();
+      }
+    }
+    text-align: right;
+    flex: 0 1 100px;
+    align-items: flex-start;
+    @media (min-width: $screen-sm) {
+      flex: 0 1 200px;
+    }
+  }
+  .col-category {
+    @include b3-style();
+    flex: 1 1 70px;
+    @media (min-width: $screen-sm) {
+      flex: 1 1 100px;
+    }
+  }
+  .col-actions {
+    flex: 1 1 100%;
+    padding: 0;
+    align-items: flex-start;
+    @media (min-width: $screen-sm) {
+      flex: 0 0 120px;
+    }
+  }
+
+  .expense {
+    .header,
+    .col-amount {
+      color: $sq-color-error-light;
+    }
+  }
+  .transfer {
+    .header,
+    .col-amount {
+      color: $sq-color-info-light;
+    }
+  }
+  .income {
+    .header,
+    .col-amount {
+      color: $sq-color-success;
+    }
+  }
+}
+
+.sq-tabs--transaction {
+  .loan.Mui-selected {
+    background: $sq-color-warning-darker;
+  }
+  .transfer.Mui-selected {
+    background: $sq-color-info-darker;
+  }
+  .years, .months {
+    background: $sq-color-success-darker;
+  }
+  .cr.Mui-selected {
+    background: $sq-color-success-darker;
+  }
+  .dr.Mui-selected {
+    background: $sq-color-error-darker;
+  }
+}

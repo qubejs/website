@@ -1,0 +1,6 @@
+title: QubeJs Examples
+template: apps/core/templates/page
+className: sq-page-examples
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+container: TocIndex

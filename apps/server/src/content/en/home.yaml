@@ -1,0 +1,268 @@
+title: Homepage
+template: apps/core/templates/page
+rootClassName: sq-content-page--full-width
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+ # First image with home content
+  - component: MagicHeroContent
+    content:
+      component: HeroContent
+      theme: dark
+      template: large-background
+      background: /dam/qubejs/gifs/home-2.gif
+      header: | 
+        <span> Visualize Design and ship your dream app/website. </span> <span> Zero code, blazing fast.</span>
+      subHeader: |
+        Try our powered framework with customized app development creating anything form/screen/landing page.
+      headerTag: h1
+      # classes:
+      #   innerWrapper: container-max
+      #   links: mb-xtrawide
+      links:
+        - buttonText: Get Started
+          type: Button
+          color: primary
+          size: large
+          iconName: arrow-right
+          iconDirection: right
+          to: /content/en/qubejs/trynow
+          analytics:
+            click:
+              type: event
+              eventName: link_click
+              action: features
+              label: Features
+              category: Content
+              section: Homepage
+        # - buttonText: Documentation
+        #   type: Button
+        #   variant: outlined
+        #   size: large
+        #   to: /content/en/qubejs/docs
+        #   analytics:
+        #     click:
+        #       type: event
+        #       eventName: link_click
+        #       action: documentation
+        #       label: Documentation
+        #       category: Content
+        #       section: Homepage
+    name: anim-home-2
+    timeline:
+      defaults:
+        duration: .7
+      tweens:
+        - from:
+            y: -30
+            stagger: 0.3
+            opacity: 0
+          target: .sq-hero-content__header span
+          start: -=0.3
+        - from:
+            y: -30
+            stagger: 0.3
+            opacity: 0
+          target: .sq-hero-content__body > *
+          start: -=0.5
+
+  
+  - component: MagicHeroContent
+    content:
+      component: HeroContent
+      className: sq-hero-content--center-aligned
+      # imageUrl: https://dummyimage.com/640x360/fff/aaa
+      header: | 
+        Build anything with no code or code
+      subHeader: |
+        Easy integrate with rest api<br/>
+        Bring in your components
+      headerTag: h1
+      classes:
+        innerWrapper: container-max
+        links: mb-xtrawide
+      links:
+        - buttonText: Book a demo
+          type: Button
+          size: large
+          color: primary
+          variant: outlined
+          iconName: arrow-right
+          iconDirection: right
+          to: /content/en/contact
+
+    name: build-anything
+    # timeline:
+    #   defaults:
+    #     duration: .7
+    #   tweens:
+    #     - from:
+    #         y: -30
+    #         stagger: 0.3
+    #         opacity: 0
+    #       target: .sq-hero-content__header span
+    #       start: -=0.3
+    #     - from:
+    #         y: -30
+    #         stagger: 0.3
+    #         opacity: 0
+    #       target: .sq-hero-content__body > *
+    #       start: -=0.5
+
+  - component: ImageBlockWithText
+    className: container-max  mt-jumbo mb-jumbo
+    imageUrl: /dam/qubejs/gifs/login-2.gif
+    header: | 
+      Build complex forms with validations
+    subHeader: |
+        Any form, complex validation, with unlimited possibility
+    headerTag: h1
+    classes:
+      innerWrapper: container-max
+      links: mb-xtrawide
+    links:
+      - buttonText:  Learn more
+        iconName: arrow-right
+        iconDirection: right
+        to: /content/en/qubejs/custom-forms
+  - component: HeroContent
+    className: sq-hero-content--center-aligned sq-hero-content--bg-black
+    # imageUrl: https://dummyimage.com/640x360/fff/aaa
+    header: | 
+      Why wait?
+    subHeader: |
+     Step up your game, and hit the market on time with quality
+    headerTag: h1
+    classes:
+      innerWrapper: container-max
+      links: mb-xtrawide
+    links:
+      - buttonText: Contact us
+        type: Button
+        color: inherit
+        size: large
+        variant: outlined
+        iconName: arrow-right
+        iconDirection: right
+        to: /content/en/contact
+  - component: ImageBlockWithText
+    className: sq-image-block-with-text--left-aligned container-max mt-jumbo mb-jumbo
+    imageUrl: /dam/qubejs/gifs/custom-comp.gif
+    header: | 
+      Bring in your components
+    subHeader: |
+        Register your components, and component editor is on us.
+    headerTag: h1
+    classes:
+      innerWrapper: container-max
+      links: mb-xtrawide
+    links:
+      - buttonText: Learn more
+        iconName: arrow-right
+        iconDirection: right
+        to: /content/en/qubejs/custom-components
+
+  # get 1st month free
+  - component: HeroContent
+    header: Customized build output
+    classes:
+      root: container
+    subHeader:  Generate output for an server or static site all at one click
+    className: sq-hero-content--left-aligned
+    imageUrl: /dam/qubejs/img/insights-f.png
+
+  - component: HeroContent
+    header: Integrate with your exisitng tech stack
+    classes:
+      root: container
+    subHeader:  Enter the world of fastest web development through comfort of few config.
+    className: sq-hero-content--right-aligned
+    imageUrl: /dam/qubejs/img/insights-f.png
+
+  # - header: Tech Trends
+  #   classes:
+  #     root: container
+  #   subHeader: Improve and Innovate with the Tech Trends
+  #   className: sq-hero-content--right-aligned
+  #   imageUrl: /dam/qubejs/img/workwithus.jpg
+  #   component: HeroContent
+  - component: MagicHeroContent
+    content:
+      component: HeroContent
+      className: sq-hero-content--bg-black
+      eyebrow: | 
+        Product and Engineering
+      header: | 
+        Build your Product faster with our accelerators
+      //subHeader: |
+        //Hurry up get free access to all Pro features
+      classes:
+        root: container
+        Xheader: reveal
+      links:
+        - buttonText: Explore More
+          type: Button
+          size: large
+          # color: primary
+          iconName: arrow-right
+          iconDirection: right
+          to: /content/en/accelerators
+          analytics:
+            click:
+              type: event
+              eventName: link_click
+              action: register
+              label: Register
+              category: Content
+              section: Homepage
+    name: anim1
+    timeline:
+      defaults:
+        duration: 1
+      scrub: 1
+      start: 100px center
+      end: 200px center
+      toggleActions: play none none reverse
+      trigger: .anim1
+      tweens:
+        - from:
+            y: -30
+            stagger: 0.6
+            opacity: 0
+          target: .sq-hero-content__content-col > *
+
+  # - content:
+  #     eyebrow: |
+  #       Our People
+  #     header: Startups are tough. People are important.
+  #     name: feature-wallet-1
+  #     classes:
+  #       root: container
+  #     subHeader: Our talent is partner in the firm. We are hard working, result oriented, and go-getters.
+  #     className: sq-hero-content--left-aligned
+  #     imageUrl: /dam/qubejs/img/people.jpg
+  #   component: MagicHeroContent
+  #   name: feature-onetouch-2
+  #   timeline:
+  #     scrollTrigger:
+  #       trigger: .feature-onetouch-2
+  #     tweens:
+  #       - from:
+  #           y: -30
+  #           opacity: 0
+  #         target: .sq-hero-content__eyebrow
+  #       - from:
+  #           y: 30
+  #           opacity: 0
+  #         target: .sq-hero-content__header
+  #       - from:
+  #           y: 30
+  #           opacity: 0
+  #         target: .sq-hero-content__sub-header
+  #         start: -=0.3
+  #       - from:
+  #           x: -20
+  #           opacity: 0
+  #           duration: 1
+  #         target: .sq-hero-content__content-image
+  #         start: -=0.5

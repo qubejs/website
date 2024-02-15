@@ -1,0 +1,18 @@
+title: Error Occured
+template: apps/core/templates/page
+className: sq-page sq-error-page
+contentBodyClass: container
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+    - eyebrow: Server error
+      header: Oops, something went wrong
+      subHeader: Try to refresh this page or feel free to contact us if problem presists.
+      imageUrl: /dam/qubejs/svg/error.svg
+      component: HeroContent
+      className: sq-hero-content--right-aligned
+      links:
+        - buttonText: Back to home
+          type: Button
+          variant: outlined
+          to: /content/en/home

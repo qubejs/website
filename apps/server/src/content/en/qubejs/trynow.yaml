@@ -1,0 +1,6 @@
+title: Homepage
+template: apps/core/templates/page
+rootClassName: sq-content-page--full-width
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: TopNaviagion
+container: PageBuilder
