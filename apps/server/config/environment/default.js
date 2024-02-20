@@ -20,7 +20,7 @@ module.exports = {
   },
 
   analytics: {
-    gaTrackingId: 'G-DSF',
+    gaTrackingId: 'G-DSF2',
   },
 
   server: {

@@ -3,8 +3,8 @@ var packageJson = require('../../package.json');
 module.exports = {
   analytics: envConfig.analytics,
   siteMap: {
-    theme: 'main',
-    maxNavigationLevel: 2,
+    theme: 'ice',
+    maxNavigationLevel: 3,
     appVersion: process.env.VERSION || packageJson.version,
     title: 'QubeJs: Low code platform to meet all your needs',
     errorRedirects: {
@@ -20,14 +20,15 @@ module.exports = {
           color: 'none',
           buttonText: '',
           className: 'sq-link--button mr-4',
-          iconName: 'email',
-          to: '/content/en/contact',
+          iconName: 'GitHub',
+          to: 'https://github.com/qubejs/qubejs',
+          target: '_blank',
           analytics: {
             click: {
               type: 'event',
               eventName: 'link_click',
-              action: 'contact',
-              label: 'Contact',
+              action: 'github',
+              label: 'Github',
               category: 'Content',
               section: 'Homepage',
             },

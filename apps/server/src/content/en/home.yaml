@@ -12,7 +12,7 @@ items:
       template: large-background
       background: /dam/qubejs/gifs/home-2.gif
       header: | 
-        <span> Visualize Design and ship your dream app/website. </span> <span> Zero code, blazing fast.</span>
+        <span> Visualize Design and ship your dream app/website. </span> <span> Low code, blazing fast.</span>
       subHeader: |
         Try our powered framework with customized app development creating anything form/screen/landing page.
       headerTag: h1

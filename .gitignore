@@ -7,7 +7,7 @@ tmp
 
 # dependencies
 node_modules
-
+.env
 # IDEs and editors
 /.idea
 .project
@@ -35,6 +35,9 @@ yarn-error.log
 testem.log
 /typings
 
+/apps/web/src/assets/static
+/apps/web/src/assets/*.css
+/apps/web/src/assets/media
 # System Files
 .DS_Store
 Thumbs.db

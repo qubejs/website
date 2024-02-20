@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import variables from './abstract/_variables.scss';
+import variables from './abstract/variables.module.scss';
 
 const colors = {
   primary: variables.brandPrimary,
@@ -51,26 +51,16 @@ export default createTheme({
       },
     },
     MuiPaper: {
-      root: {},
     },
     MuiButton: {
       styleOverrides: {
-        root: ({ ownerState }) => {
-          const styles = { textTransform: 'unset' };
+        root: ({ ownerState }: any) => {
+          const styles: any = { textTransform: 'unset' };
           if (ownerState.size === 'large') {
             styles.padding = '10px 40px';
           }
           return styles;
         },
-      },
-    },
-    MUIRichTextEditor: {
-      root: {
-        marginTop: 20,
-        minHeight: '200px',
-      },
-      editor: {
-        borderBottom: '1px solid gray',
       },
     },
     MuiBottomNavigation: {
@@ -110,7 +100,6 @@ export default createTheme({
       main: variables.brandPrimary,
       light: variables.brandPrimaryLight,
       dark: variables.brandPrimaryDarkest,
-      color: '#fff',
       contrastText: colors.primaryContrast,
     },
     secondary: {
@@ -120,11 +109,8 @@ export default createTheme({
       contrastText: colors.secondaryContrast,
     },
   },
-  spacing: (factor) => [0, 4, 8, 16, 32, 64][factor],
-  shadows: Array(25).fill('none'),
   typography: {
     fontFamily: 'Lato-Light',
     fontSize: 12,
-    useNextVariants: true,
   },
 });

@@ -3,8 +3,9 @@ const path = require('path');
 const chalk = require('chalk');
 const { composePlugins, withNx } = require('@nx/webpack');
 const { withReact } = require('@nx/react');
+const packageJson = require('../../package.json');
 
-const VERSION = process.env.VERSION;
+const VERSION = process.env.VERSION || packageJson.version;
 // Nx plugins for webpack.
 module.exports = composePlugins(withNx(), withReact(), (config) => {
   if (VERSION) {

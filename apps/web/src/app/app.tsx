@@ -1,65 +1,135 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
+import { useState } from 'react';
+import { connect } from 'react-redux';
+
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import {
-  Route,
-  Routes,
-  Navigate,
-  useNavigate,
-  useLocation,
-  useParams,
-  // RouterProvider,
-  // createHashRouter,
-} from 'react-router-dom';
-import { containers, storage, utils, ThemeProvider } from '@qubejs/web-react';
-import { Provider } from 'react-redux';
-// import { ThemeProvider } from '@emotion/react';
+  containers,
+  storage,
+  reducers,
+  utils,
+  ThemeProvider,
+} from '@qubejs/web-react';
+import config from '../config';
+
+import app_components from '../components';
 import app_containers from '../containers';
 import app_templates from '../templates';
 import { useEffect } from 'react';
-import { store } from '../redux';
-import config from '../../config';
 import theme from '../styles/themes/main/main.theme';
+import Content from '../templates/Content';
 
-const { DynamicContent } = containers;
+const { DynamicContent, Application } = containers;
+const { apiBridge, redirect } = utils;
+
+const { closeNotification, closePopup, closePopupScreen } = reducers.common;
+const { initApplication } = reducers.content;
+
+const { redirectTo } = redirect;
 
 storage.containers.set(containers);
 storage.containers.set(app_containers);
 storage.containers.set(app_templates);
-console.log(storage.containers);
+storage.components.set(app_components);
 utils.redirect.setUrlMapping(config.urlMapping);
-const setFullHeight = () => {
-  utils.win.getWindow().document.querySelector(':root').style.setProperty('--vh', window.innerHeight / 100 + 'px');
-};
-window.addEventListener('resize', () => {
-  setFullHeight();
+utils.setErrorCodes({
+  UNAUTHORIZE_CODE: 401,
+  LOGIN_FAILED: 403,
 });
-setFullHeight();
-export function App() {
+
+export function App({ appActions, ...props }: any) {
   const navigate = useNavigate();
-  const params = useParams();
-  const { Snackbar } = storage.components.get();
-  const location = useLocation();
+  const [currentTheme, setTheme] = useState('main');
+  const [inProgress, setInProgress] = useState(false);
+  const onUnauthroized = () => {
+    console.log('unauthorize');
+  };
+
   useEffect(() => {
     utils.redirect.setNavigate(navigate);
+    apiBridge.events.subscribe('onUnauthroized', onUnauthroized);
+    const token = utils.cookie.get('token');
+    utils.apiBridge.addHeader(
+      'tenantCode',
+      utils.win.getWindow().APP_CONFIG.tenantCode
+    );
+    if (token) {
+      utils.apiBridge.addHeader('Authorization', `Bearer ${token}`);
+    }
+    appActions.initApplication(config);
   }, []);
+  const onThemeChange = (newTHeme: string) => {
+    if (newTHeme !== currentTheme) {
+      console.log(`${currentTheme} changed to : ${newTHeme}`);
+      setTheme(newTHeme);
+      setInProgress(true);
+      let itemFound;
+      let regExMatch: any;
+      for (let i = 0; i < document.head.children.length; i++) {
+        const item = document.head.children[i] as HTMLLinkElement;
+        regExMatch = item.href?.match('/(.*).([0-9].[0-9].[0-9].css)$');
+        if (item?.tagName === 'LINK' && item?.href && regExMatch) {
+          itemFound = item;
+          break;
+        }
+      }
+      if (itemFound && currentTheme !== regExMatch[2]) {
+        itemFound.setAttribute(
+          'href',
+          [`/${currentTheme}.`, regExMatch[2]].join('')
+        );
+        document.head.appendChild(itemFound);
+      } else {
+        const elem = document.createElement('link');
+        elem.setAttribute('rel', `stylesheet`);
+        elem.setAttribute(
+          'href',
+          `/${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
+        );
+        document.head.appendChild(elem);
+      }
+      setTimeout(() => {
+        setInProgress(false);
+      }, 500);
+    }
+  };
   return (
     <div>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <div className="app-main container-fluid">
+      <ThemeProvider theme={theme}>
+        <Content>
+          <Application>
             <Routes>
-              {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
               <Route
                 path="/content/*"
-                element={<DynamicContent location={location} params={params} />}
+                element={
+                  <DynamicContent {...props} onThemeChange={onThemeChange} />
+                }
               />
               <Route path="*" element={<Navigate to="/content/en/home" />} />
             </Routes>
-          </div>
-        </ThemeProvider>
-      </Provider>
+          </Application>
+        </Content>
+      </ThemeProvider>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    appStore: state,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    appActions: {
+      initApplication: (data: any) => dispatch(initApplication(data)),
+      closeNotification: () => dispatch(closeNotification()),
+      closePopup: () => dispatch(closePopup()),
+      closePopupScreen: () => dispatch(closePopupScreen()),
+    },
+    raiseAction: dispatch,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
