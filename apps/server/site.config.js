@@ -3,7 +3,7 @@ var packageJson = require('../../package.json');
 module.exports = {
   analytics: envConfig.analytics,
   siteMap: {
-    theme: 'ice',
+    theme: 'main',
     maxNavigationLevel: 3,
     appVersion: process.env.VERSION || packageJson.version,
     title: 'QubeJs: Low code platform to meet all your needs',
