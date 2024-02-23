@@ -33,7 +33,7 @@
     "dist-server": {
       "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["web:dist"],
+      "dependsOn": ["web:build-server"],
       "defaultConfiguration": "production",
       "options": {
         "target": "node",
