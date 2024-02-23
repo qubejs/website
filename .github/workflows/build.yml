@@ -25,4 +25,4 @@ jobs:
       - name: Build
         run: |
           yarn install --frozen-lockfile
-          npx nx run-many -t dist web
+          npx nx run-many -t dist
