@@ -26,3 +26,15 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           npx nx run-many -t dist
+      - name: Archive server
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-server
+          path: |
+            dist/apps/server
+      - name: Archive web
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-web
+          path: |
+            dist/apps/web
