@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'assets')));
 
-console.log(path.join(__dirname, 'content'));
+console.log(path.join(__dirname, 'assets'));
 // Content server
 var cmsSever = new ContentServer(
   {

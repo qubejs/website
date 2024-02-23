@@ -47,7 +47,7 @@
           "apps/server/src/content",
           "apps/server/src/dam",
           {
-            "glob": "dist/apps/content",
+            "glob": "dist/apps/web",
             "input": ".",
             "output": "./assets"
           }
