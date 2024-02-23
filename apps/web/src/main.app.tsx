@@ -32,7 +32,7 @@ class AppRoot {
     root.render(
       <RouterToUse>
         <Provider store={store}>
-          <App />
+          <App themes={themes} />
         </Provider>
       </RouterToUse>
     );

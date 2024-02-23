@@ -16,7 +16,6 @@ import app_components from '../components';
 import app_containers from '../containers';
 import app_templates from '../templates';
 import { useEffect } from 'react';
-import theme from '../styles/themes/main/main.theme';
 import Content from '../templates/Content';
 
 const { DynamicContent, Application } = containers;
@@ -37,7 +36,7 @@ utils.setErrorCodes({
   LOGIN_FAILED: 403,
 });
 
-export function App({ appActions, ...props }: any) {
+export function App({ appActions, themes, ...props }: any) {
   const navigate = useNavigate();
   const [currentTheme, setTheme] = useState('main');
   const [inProgress, setInProgress] = useState(false);
@@ -67,16 +66,18 @@ export function App({ appActions, ...props }: any) {
       let regExMatch: any;
       for (let i = 0; i < document.head.children.length; i++) {
         const item = document.head.children[i] as HTMLLinkElement;
-        regExMatch = item.href?.match('/(.*).([0-9].[0-9].[0-9].css)$');
-        if (item?.tagName === 'LINK' && item?.href && regExMatch) {
+        let stringHref = (item.href || '');
+        stringHref = stringHref.substr(stringHref.indexOf('/') > -1 ? stringHref.lastIndexOf('/') + 1 : 0);
+        regExMatch = stringHref?.match('(.*).([0-9].[0-9].[0-9].css)$');
+        if (item?.tagName === 'LINK' && stringHref && regExMatch) {
           itemFound = item;
           break;
         }
       }
-      if (itemFound && currentTheme !== regExMatch[2]) {
+      if (regExMatch && itemFound && currentTheme !== regExMatch[1]) {
         itemFound.setAttribute(
           'href',
-          [`/${currentTheme}.`, regExMatch[2]].join('')
+          [`${newTHeme}.`, regExMatch[2]].join('')
         );
         document.head.appendChild(itemFound);
       } else {
@@ -84,7 +85,7 @@ export function App({ appActions, ...props }: any) {
         elem.setAttribute('rel', `stylesheet`);
         elem.setAttribute(
           'href',
-          `/${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
+          `${newTHeme}.${utils.win.getWindow().APP_CONFIG.appVersion}.css`
         );
         document.head.appendChild(elem);
       }
@@ -95,7 +96,7 @@ export function App({ appActions, ...props }: any) {
   };
   return (
     <div>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themes[currentTheme]}>
         <Content>
           <Application>
             <Routes>

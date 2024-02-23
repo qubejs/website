@@ -86,7 +86,7 @@ module.exports = {
     },
     globalFooter: {
       logo: {
-        name: 'logo-muted',
+        name: 'logo-wide',
         size: 'logowide',
       },
       classes: {

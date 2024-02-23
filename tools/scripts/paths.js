@@ -11,6 +11,7 @@ module.exports = {
   webSrc: resolveApp('apps/web/src'),
   server: resolveApp('apps/server'),
   dist: resolveApp('dist'),
+  serverAssets: resolveApp('apps/server/src/assets'),
   distWeb: resolveApp('dist/apps/web'),
   webStyles: resolveApp('apps/web/src/styles'),
   webAssets: resolveApp('apps/web/src/assets'),
