@@ -63,8 +63,8 @@ jobs:
         with:
           # GitHub Action output files
           source-directory: dist/apps/web/
-          # destination-github-username: <external org/user name>
-          destination-repository-name: qubejs/website
+          destination-github-username: navneetnagpal
+          destination-repository-name: qubejs/qubejs.github.io.git
           user-email: navneetnaagpal@gmail.com
           # It defaults to `main`
           target-branch: "main"
