@@ -14,7 +14,7 @@ module.exports = {
   mode: 'production',
   // devtool: 'source-map',
   output: {
-    path: process.argv.indexOf('--mode=production') === -1 ? paths.serverAssets : paths.distWeb,
+    path: process.argv.indexOf('--mode=production') === -1 ? `${paths.webAssets}/static` : paths.distWeb,
     filename: `static/js/[name]/out.js`,
     assetModuleFilename: `media/[hash][ext][query]`,
     publicPath: PUBLIC_URL,

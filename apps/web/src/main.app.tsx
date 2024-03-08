@@ -1,8 +1,6 @@
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import { cordova } from '@qubejs/web-react';
-import { store } from './redux';
 import App from './app/app';
 import './styles/themes/main/index.scss';
 
@@ -17,23 +15,19 @@ class AppRoot {
       false
     );
   }
-  initApp() {
-    // Init App
-  }
+  initApp() {}
   onDeviceReady(direct?: boolean, { themes, ...options }: any = {}) {
     if (!direct) {
       this.initApp();
     }
-    console.log('app initialized');
+    console.log('app initialized')
     const root = ReactDOM.createRoot(
       document.getElementById('root') as HTMLElement
     );
     const RouterToUse = cordova.isApp() ? HashRouter : BrowserRouter;
     root.render(
       <RouterToUse>
-        <Provider store={store}>
-          <App themes={themes} />
-        </Provider>
+        <App themes={themes} />
       </RouterToUse>
     );
   }
