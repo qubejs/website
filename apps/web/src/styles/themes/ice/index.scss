@@ -1,9 +1,12 @@
 @import "./abstract";
 @import "../../mixins";
-@import "~@qubejs/web-react/src/styles/index";
+@import "@qubejs/web-react/src/styles/index";
 @import "@qubejs/ui-material-base/src/styles/index";
 @import "fonts";
+@import "../../application/index.scss";
+@import "../../mixins/index";
 @import "../../vendor/index";
 @import "../../base/index";
 @import "../../components/index";
 @import "../../pages/index";
+@import "./headers";

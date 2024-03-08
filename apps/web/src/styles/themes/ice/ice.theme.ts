@@ -22,7 +22,7 @@ const colors = {
 
 export { colors };
 
-export default createTheme({
+const themeopts: any = {
   components: {
     MuiFormLabel: {
       styleOverrides: {
@@ -51,6 +51,7 @@ export default createTheme({
       },
     },
     MuiPaper: {
+      root: {},
     },
     MuiButton: {
       styleOverrides: {
@@ -61,6 +62,15 @@ export default createTheme({
           }
           return styles;
         },
+      },
+    },
+    MUIRichTextEditor: {
+      root: {
+        marginTop: 20,
+        minHeight: '200px',
+      },
+      editor: {
+        borderBottom: '1px solid gray',
       },
     },
     MuiBottomNavigation: {
@@ -100,6 +110,7 @@ export default createTheme({
       main: variables.brandPrimary,
       light: variables.brandPrimaryLight,
       dark: variables.brandPrimaryDarkest,
+      color: '#fff',
       contrastText: colors.primaryContrast,
     },
     secondary: {
@@ -109,8 +120,12 @@ export default createTheme({
       contrastText: colors.secondaryContrast,
     },
   },
+  spacing: (factor: any) => [0, 4, 8, 16, 32, 64][factor],
+  shadows: Array(25).fill('none'),
   typography: {
     fontFamily: 'Lato-Light',
     fontSize: 12,
+    useNextVariants: true,
   },
-});
+};
+export default createTheme(themeopts);
