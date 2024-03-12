@@ -12,7 +12,7 @@ import {
 } from 'react-router-dom';
 import { containers, storage, utils, plugins } from '@qubejs/web-react';
 import { ThemeProvider } from '@qubejs/ui-material-base/theme.esm';
-import * as uiMaterial from '@qubejs/ui-material-base/components.lazy.esm';
+import * as uiMaterial from '@qubejs/ui-material-base/basic.esm';
 import { Provider } from 'react-redux';
 import app_containers from '../containers';
 import app_templates from '../templates';
@@ -80,15 +80,27 @@ export function App({ themes, props }: any) {
   };
   useEffect(() => {
     // Promise.all([
-    //   import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
-    //     plugins.register(uiMaterial);
-    //   }),
-    //   import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
-    //     plugins.register(uiMaterial);
-    //   }),
-    //   import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
-    //     plugins.register(uiMaterial);
-    //   }),
+    // import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
+    //   plugins.register(uiMaterial);
+    // }),
+    import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
+    import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
+    import('@qubejs/ui-material-base/advanced.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
+    import('@qubejs/ui-material-base/editing.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
+    import('@qubejs/ui-material-base/files.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
+    import('@qubejs/ui-material-base/visualization.esm').then((uiMaterial) => {
+      plugins.register(uiMaterial);
+    });
     // ]).then(() => {
     setInProgress(false);
     // });

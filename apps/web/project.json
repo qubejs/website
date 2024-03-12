@@ -169,7 +169,7 @@
       "dependsOn": ["clean-assets", "build-dist", "build-scss", "build-themes"]
     },
     "deploy-web": {
-      "command": "rm -rf static-deploy/web/*  && cp -r dist/apps/web static-deploy/ && cd static-deploy/web && git add . && git commit -m \"update website\" && git push",
+      "command": "npm version patch && rm -rf static-deploy/web/*  && cp -r dist/apps/web static-deploy/ && cd static-deploy/web && git add . && git commit -m \"update website\" && git push",
       "dependsOn": ["dist"]
     },
     "dist:local": {
