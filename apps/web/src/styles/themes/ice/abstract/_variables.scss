@@ -3,10 +3,11 @@ $bootstrap-sass-asset-helper: false ;
 //
 // Variables
 // --------------------------------------------------
-$header-font-family: Montserrat,Helvetica,Arial,Lucida,sans-serif;
-$header-serif-font-family: Montserrat,Helvetica,Arial,Lucida,sans-serif;
-$paragraph-font-family: 'OpenSans', Arial;
-$text-font-family: 'OpenSans', Arial;
+:root {
+  --header-font-family: 'RobotoCondensed-Bold';
+  --paragraph-font-family: 'RobotoCondensed-Light';
+  --text-font-family: 'RobotoCondensed-Light';
+}
 //== Colors
 //
 

@@ -1,5 +1,7 @@
 module.exports = {
-  
+  analytics: {
+    gaTrackingId: 'G-0X108W59H9',
+  },
   db: {
     connection: 'mongodb://',
     username: '',

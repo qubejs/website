@@ -12,15 +12,17 @@ import {
 } from 'react-router-dom';
 import { containers, storage, utils, plugins } from '@qubejs/web-react';
 import { ThemeProvider } from '@qubejs/ui-material-base/theme.esm';
+import * as uiMaterial from '@qubejs/ui-material-base/components.lazy.esm';
 import { Provider } from 'react-redux';
 import app_containers from '../containers';
 import app_templates from '../templates';
 import { useEffect } from 'react';
 import { store } from '../redux';
 import config from '../config';
+import Content from '../templates/Content';
 
 const { DynamicContent, Application } = containers;
-
+plugins.register(uiMaterial);
 storage.containers.set(containers);
 storage.containers.set(app_containers);
 storage.containers.set(app_templates);
@@ -38,9 +40,7 @@ export function App({ themes, props }: any) {
   }, []);
   const onThemeChange = (newTHeme: string) => {
     const preFix =
-      utils.win.getWindow().APP_CONFIG.environment === 'development'
-        ? ''
-        : '';
+      utils.win.getWindow().APP_CONFIG.environment === 'development' ? '' : '';
     if (newTHeme !== currentTheme) {
       console.log(`${currentTheme} changed to : ${newTHeme}`);
       setTheme(newTHeme);
@@ -79,19 +79,19 @@ export function App({ themes, props }: any) {
     }
   };
   useEffect(() => {
-    Promise.all([
-      import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
-        plugins.register(uiMaterial);
-      }),
-      import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
-        plugins.register(uiMaterial);
-      }),
-      import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
-        plugins.register(uiMaterial);
-      }),
-    ]).then(() => {
-      setInProgress(false);
-    });
+    // Promise.all([
+    //   import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
+    //     plugins.register(uiMaterial);
+    //   }),
+    //   import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
+    //     plugins.register(uiMaterial);
+    //   }),
+    //   import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
+    //     plugins.register(uiMaterial);
+    //   }),
+    // ]).then(() => {
+    setInProgress(false);
+    // });
   }, []);
   console.log(themes);
   return (
@@ -100,14 +100,24 @@ export function App({ themes, props }: any) {
         {!inProgress && (
           <ThemeProvider theme={themes[currentTheme]}>
             <Application>
-              <Routes>
-                {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
-                <Route
-                  path="/content/*"
-                  element={<DynamicContent {...props} onThemeChange={onThemeChange} />}
-                />
-                <Route path="*" element={<Navigate to="/content/en/home" />} />
-              </Routes>
+              <Content>
+                <Routes>
+                  {/* <Route path="/" element={<NxWelcome title='Hello' />} /> */}
+                  <Route
+                    path="/content/*"
+                    element={
+                      <DynamicContent
+                        {...props}
+                        onThemeChange={onThemeChange}
+                      />
+                    }
+                  />
+                  <Route
+                    path="*"
+                    element={<Navigate to="/content/en/home" />}
+                  />
+                </Routes>
+              </Content>
             </Application>
           </ThemeProvider>
         )}

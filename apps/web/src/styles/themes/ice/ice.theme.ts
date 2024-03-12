@@ -123,7 +123,7 @@ const themeopts: any = {
   spacing: (factor: any) => [0, 4, 8, 16, 32, 64][factor],
   shadows: Array(25).fill('none'),
   typography: {
-    fontFamily: 'Lato-Light',
+    fontFamily: 'RobotoCondensed-Light',
     fontSize: 12,
     useNextVariants: true,
   },

@@ -165,8 +165,12 @@
       "command": "rm -rf apps/web/src/assets/static && mkdir apps/web/src/assets/static && mkdir apps/web/src/assets/static/media"
     },
     "dist": {
-      "command": "node tools/scripts/build-pages.js && node tools/scripts/build-web.js",
+      "command": "node tools/scripts/build-pages.js && node tools/scripts/build-web.js && node tools/scripts/dist.js",
       "dependsOn": ["clean-assets", "build-dist", "build-scss", "build-themes"]
+    },
+    "deploy-web": {
+      "command": "rm -rf static-deploy/web/*  && cp -r dist/apps/web static-deploy/ && cd static-deploy/web && git add . && git commit -m \"update website\" && git push",
+      "dependsOn": ["dist"]
     },
     "dist:local": {
       "command": "node tools/scripts/dist-local.js",

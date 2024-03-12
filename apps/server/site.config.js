@@ -3,7 +3,7 @@ var packageJson = require('../../package.json');
 module.exports = {
   analytics: envConfig.analytics,
   siteMap: {
-    theme: 'ice',
+    theme: 'main',
     maxNavigationLevel: 3,
     appVersion: process.env.VERSION || packageJson.version,
     title: 'QubeJs: Low code platform to meet all your needs',
@@ -98,13 +98,13 @@ module.exports = {
         info: [
           {
             iconName: 'call',
-            buttonText: '+91 97187 17347',
+            buttonText: '+91 99107 02765',
             to: 'tel:+919718717347',
           },
           {
             iconName: 'email',
-            buttonText: 'hello@qubejs.com',
-            to: 'mailto:hello@qubejs.com',
+            buttonText: 'navneetnaagpal@gmail.com',
+            to: 'mailto:navneetnaagpal@gmail.com',
           },
         ],
       },
