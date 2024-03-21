@@ -13,6 +13,7 @@ module.exports = {
   dist: resolveApp('dist'),
   serverAssets: resolveApp('apps/server/src/assets'),
   distWeb: resolveApp('dist/apps/web'),
+  distServerAssets: resolveApp('dist/apps/server/assets'),
   webStyles: resolveApp('apps/web/src/styles'),
   webAssets: resolveApp('apps/web/src/assets'),
 };

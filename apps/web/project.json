@@ -165,7 +165,7 @@
     },
 
     "build-server": {
-      "command": "node tools/scripts/build-web.js",
+      "command": "node tools/scripts/build-web.js --server=true",
       "dependsOn": ["build-dist", "build-scss", "build-themes"],
       "options": {
         "outputPath": "dist/apps/web"
