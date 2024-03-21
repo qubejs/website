@@ -8,14 +8,11 @@ process.env.CONFIG_ENV = env;
 const sendAppConfig = require('../../apps/server/config/app-config');
 const chalk = require('chalk');
 
-const distWeb =
-  paramsEnv.server === 'true' ? paths.distServerAssets : paths.distWeb;
-
 console.log(chalk.green('env = ' + env));
 console.log(chalk.yellow('building web'));
 const objBuilder = new WebBuild({
   version: sendAppConfig.appVersion,
-  indexHtml: distWeb + '/index.html',
+  indexHtml: paths.distWeb + '/index.html',
   appConfig: {
     ...sendAppConfig,
     source: 'Web',
