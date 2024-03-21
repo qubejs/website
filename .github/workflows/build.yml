@@ -38,7 +38,7 @@ jobs:
           name: dist-web
           path: |
             dist/apps/web
-      - name: Deploy to external repository
+      - name: Deploy to www.qubejs.com
         uses: cpina/github-action-push-to-another-repository@main
         env:
           # 🏗️ <internal repository>, run GitHub Action.
