@@ -2,6 +2,7 @@ const { ArgsReader, WebBuild } = require('@qubejs/scripts');
 const paths = require('./paths');
 const paramsEnv = new ArgsReader().get();
 const env = paramsEnv.env || 'production';
+const config = require('../../apps/server/config/environment');
 process.env.CONFIG_ENV = env;
 
 const sendAppConfig = require('../../apps/server/config/app-config');
@@ -18,7 +19,18 @@ const objBuilder = new WebBuild({
   },
   publicUrl: sendAppConfig.publicUrl,
   scripts: `
-
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=${config.analytics.gaTrackingId}"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', '${config.analytics.gaTrackingId}');
+</script>
   `,
 });
 
