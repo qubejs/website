@@ -27,7 +27,24 @@ storage.containers.set(containers);
 storage.containers.set(app_containers);
 storage.containers.set(app_templates);
 utils.redirect.setUrlMapping(config.urlMapping);
-
+import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
+import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
+import('@qubejs/ui-material-base/advanced.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
+import('@qubejs/ui-material-base/editing.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
+import('@qubejs/ui-material-base/files.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
+import('@qubejs/ui-material-base/visualization.esm').then((uiMaterial) => {
+  plugins.register(uiMaterial);
+});
 export function App({ themes, props }: any) {
   const navigate = useNavigate();
   const params = useParams();
@@ -83,24 +100,13 @@ export function App({ themes, props }: any) {
     // import('@qubejs/ui-material-base/basic.esm').then((uiMaterial) => {
     //   plugins.register(uiMaterial);
     // }),
-    import('@qubejs/ui-material-base/data.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
-    import('@qubejs/ui-material-base/content.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
-    import('@qubejs/ui-material-base/advanced.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
-    import('@qubejs/ui-material-base/editing.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
-    import('@qubejs/ui-material-base/files.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
-    import('@qubejs/ui-material-base/visualization.esm').then((uiMaterial) => {
-      plugins.register(uiMaterial);
-    });
+
+    // import('@qubejs/ui-material-base/files.esm').then((uiMaterial) => {
+    //   plugins.register(uiMaterial);
+    // });
+    // import('@qubejs/ui-material-base/visualization.esm').then((uiMaterial) => {
+    //   plugins.register(uiMaterial);
+    // });
     // ]).then(() => {
     setInProgress(false);
     // });

@@ -96,13 +96,13 @@ items:
               info: [
                 {
                   iconName: 'call',
-                  buttonText: '+91 97187 17347',
-                  href: 'tel:+919718717347'
+                  buttonText: '+91 99107 02765',
+                  href: 'tel:+919910702765'
                 },
                 {
                   iconName: 'email',
-                  buttonText: 'hello@qubejs.com',
-                  href: 'mailto:hello@qubejs.com'
+                  buttonText: 'navneetnaagpal@gmail.com',
+                  href: 'mailto:navneetnaagpal@gmail.com'
                 }
               ]
             },
