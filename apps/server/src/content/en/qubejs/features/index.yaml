@@ -19,3 +19,27 @@ items:
     component: HeroContent
     className: sq-hero-content--right-aligned
     imageUrl: https://uxdt.nic.in/wp-content/uploads/2020/08/feedback_form_4_p.png?x93453
+  - component: MagicHeroContent
+    content:
+      component: HeroContent
+      className: sq-hero-content--bg-black
+      eyebrow: | 
+        ANALYTICS
+      header: | 
+        Integrate with your favourite analytics framework
+      //subHeader: |
+        //Hurry up get free access to all Pro features
+      classes:
+        root: container
+        Xheader: reveal
+      links:
+        - buttonText: Explore More
+          type: Button
+          size: large
+          # color: primary
+          iconName: arrow-right
+          iconDirection: right
+          to: /content/en/accelerators
+          analytics:
+            click:
+              type: event
