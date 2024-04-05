@@ -62,5 +62,9 @@ copyFolderRecursiveSync(
   `${paths.server}/src/dam`,
   `${paths.distWeb}`, false
 );
+copyFileSync(
+  `${paths.distWeb}/index.html`,
+  `${paths.distWeb}/404.html`, false
+);
 
 console.log(chalk.green('copy assets done'));
