@@ -77,7 +77,7 @@
           "output": "./"
         },
         {
-          "glob": "CNAME",
+          "glob": ".htaccess",
           "input": "apps/web/src",
           "output": "./"
         }],

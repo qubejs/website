@@ -24,7 +24,7 @@ var cmsSever = new ContentServer(
     clientLibs: path.join(__dirname, 'clientlibs'),
     userData: () => {
       return {
-        tenantCode: process.env.TENANT_CODE || 'NOT_DEFINED',
+        tenantCode: config.tenantCode,
         sitekey: process.env.sitekey || 'NOT_DEFINED',
       };
     },

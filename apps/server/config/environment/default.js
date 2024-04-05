@@ -2,8 +2,13 @@ module.exports = {
   product: {
     name: 'REPM',
   },
+  apiPrefix: {
+    '/api/v1/': {
+      prefix: process.env.API_PREFIX || 'https://service.homejrny.com',
+    },
+  },
   publicUrl: process.env.PUBLIC_URL || '',
-  tenantCode: process.env.TENANT_CODE,
+  tenantCode: process.env.TENANT_CODE || 'nybblecore',
   reCaptcha: {
     siteKey: process.env.RECAPTCHA_SITE_KEY,
     secretKey: process.env.RECAPTCHA_SERVER_KEY,

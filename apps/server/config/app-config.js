@@ -7,7 +7,7 @@ module.exports = {
   appVersion: process.env.VERSION || packageJson.version,
   apiPrefix: config.apiPrefix,
   environment: config.env,
-  tenantCode: config.tenantCode || 'Tenant1',
+  tenantCode: config.tenantCode,
   siteMap: siteConfig,
   publicUrl: config.publicUrl,
   module: 'qubejs',

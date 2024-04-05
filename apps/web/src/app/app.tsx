@@ -23,6 +23,9 @@ import Content from '../templates/Content';
 
 const { DynamicContent, Application } = containers;
 plugins.register(uiMaterial);
+storage.components.set({
+  CheckboxField: uiMaterial.components.Checkbox,
+})
 storage.containers.set(containers);
 storage.containers.set(app_containers);
 storage.containers.set(app_templates);

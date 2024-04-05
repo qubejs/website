@@ -11,6 +11,15 @@ module.exports = {
       500: '/content/pages/500',
       404: '/content/pages/404',
     },
+    dynamicContentConfig: {
+      '/content/dynamic/*': {
+        url: '/api/v1/dynamic/form/public/search',
+        params: {
+          path: '.url',
+        },
+        method: 'post',
+      },
+    },
     globalNavigation: {
       className: 'sq-global-navigation--default sq-global-navigation--blured',
       navPosition: 'sticky',
