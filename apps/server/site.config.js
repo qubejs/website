@@ -184,7 +184,7 @@ module.exports = {
       ],
 
       className: 'sq-footer--light sq-footer--primary',
-      copyrights: '© QubeJS 2021, All Rights Reserved',
+      copyrights: '© QubeJS 2024, All Rights Reserved',
     },
     logo: {
       name: 'logo-wide',

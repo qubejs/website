@@ -1,0 +1,28 @@
+title: Contact
+template: apps/core/templates/page
+className: sq-page
+# contentBodyClass: container-form container
+layout: apps/qubejs/layouts/page-spa
+bodyClassName: sq-content-page__body-wrapper
+containerTemplate: Homepage
+reset:
+  type: clearAll
+items:
+  - component: GetInTouch
+    name: getintouch1
+    header: Get in touch
+    info:
+      - iconName: message
+        text: navneetnaagpal@gmail.com
+        href: mailto:navneetnaagpal@gmail.com
+      - iconName: call
+        text: +91 9910702765
+        href: call:+919910702765
+      - iconName: Computer
+        text: www.qubejs.com
+        href: https://www.qubejs.com
+        to: https://www.qubejs.com
+        target: _blank
+    footerText: |
+      Let's get this conversation started. Get in touch with us.
+
