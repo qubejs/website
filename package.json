@@ -1,6 +1,6 @@
 {
   "name": "@website/source",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "update:core": "npm i @qubejs/cms@latest @qubejs/core@latest @qubejs/scripts@latest @qubejs/web-react@latest @qubejs/ui-material-base@latest --legacy-peer-deps"
