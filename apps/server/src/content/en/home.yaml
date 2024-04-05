@@ -89,7 +89,7 @@ items:
           variant: outlined
           iconName: arrow-right
           iconDirection: right
-          to: /content/dynamic/webhook/quebjs/register
+          to: /content/dynamic/webhook/qubejs/register
 
     name: build-anything
     # timeline:
@@ -144,7 +144,7 @@ items:
         variant: outlined
         iconName: arrow-right
         iconDirection: right
-        to: /content/dynamic/webhook/quebjs/register
+        to: /content/dynamic/webhook/qubejs/register
   - component: ImageBlockWithText
     className: sq-image-block-with-text--left-aligned container-max mt-jumbo mb-jumbo
     imageUrl: /dam/qubejs/gifs/custom-comp.gif
