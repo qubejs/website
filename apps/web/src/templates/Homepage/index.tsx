@@ -21,16 +21,18 @@ class Homepage extends BaseContainer {
 
   render() {
     const { GlobalNavigation, Footer } = utils.storage.components.get();
-    const { children, pageData = {}, data = {}, store } = this.props;
+    const { children, pageData = {}, data = {}, userData } = this.props;
+    const { pageData: dynamicSiteMap } = userData.dynamicSiteMap || {};
+      console.log(userData, dynamicSiteMap);
     let { siteMap = {} } = data;
-    siteMap = siteMap?.siteMap
+    siteMap = dynamicSiteMap?.siteMap ? dynamicSiteMap : siteMap?.siteMap
       ? siteMap
       : utils.win.getWindow().APP_CONFIG?.siteMap;
     let props = {};
     props = { ...siteMap?.siteMap?.globalNavigation };
     return (
       <div
-        className={`sq-content-page 22 homepage sq-content-page--header-footer-body ${
+        className={`sq-content-page homepage sq-content-page--header-footer-body ${
           pageData.templateClassName || ''
         }`}
       >

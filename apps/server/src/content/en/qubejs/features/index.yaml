@@ -43,3 +43,17 @@ items:
           analytics:
             click:
               type: event
+  - header: | 
+      Customized Look and feel
+    subHeader: |
+      Create your own personalized theme with few configuration
+    component: HeroContent
+    className: sq-hero-content--right-aligned
+    imageUrl: /dam/qubejs/imgs/artwork-tech-1.png
+  - header: | 
+      Customized Build output
+    subHeader: |
+      Create a static build with your customized configuration. And easy to integrate with your exisitng api.
+    component: HeroContent
+    className: sq-hero-content--left-aligned
+    imageUrl: /dam/qubejs/imgs/placeholder-image.png

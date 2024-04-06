@@ -2,3 +2,11 @@ init:
   sys_options:
     inputVariant: ::globals.options::inputVariant
   moduleFilter: false
+hook:
+  load:
+    - url: /api/v1/dynamic/form/public/search
+      method: post
+      dataKey: dynamicSiteMap
+      params:
+        path: /content/dynamic/sitemap
+      saveType: protected
