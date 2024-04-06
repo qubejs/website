@@ -139,7 +139,7 @@ export function App({ themes, props, appStore, appActions }: any) {
                     <DynamicContent {...props} onThemeChange={onThemeChange} />
                   }
                 />
-                <Route path="*" element={<Navigate to={`${userData.defaultRedirect || "/content/dynamic/home"}`} />} />
+                <Route path="*" element={<Navigate to={`${userData.defaultRedirect?.default || "/content/dynamic/home"}`} />} />
               </Routes>
             </Content>
           </Application>
