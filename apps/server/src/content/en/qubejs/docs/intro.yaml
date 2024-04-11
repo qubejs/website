@@ -25,7 +25,7 @@ items:
   - component: CodeHighlight
     className: mb-xtrawide
     code: |
-      npm install @qubejs/web-react --save
+      npm install @qubejs/web-react @qubejs/core @qubejs/cms @qubejs/scripts @qubejs/ui-material-base --save
   - header: |
       Part 2: Server Config
     className: sq-header--blockquote sq-header--no-padding 
