@@ -29,7 +29,7 @@ jobs:
           npm --no-git-tag-version version ${{  github.ref_name }}
       - name: Build
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --production=false
           npx nx run-many -t dist
       - name: Archive server
         uses: actions/upload-artifact@v4
