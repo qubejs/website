@@ -6,7 +6,7 @@ containerTemplate: Homepage
 container: ContentWithLeftNavigation
 title: Create your first page
 overrideTransition: true
-order: 2
+order: 3
 category: 1::Get Started
 items:
   - header: |

@@ -4,7 +4,7 @@ bodyClassName: sq-page--fixed-nav
 layout: apps/qubejs/layouts/page-spa
 containerTemplate: Homepage
 container: ContentWithLeftNavigation
-title: QubeJS& React
+title: 1. QubeJS & React
 overrideTransition: true
 order: 2
 category: 1::Get Started
