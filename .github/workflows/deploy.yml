@@ -6,11 +6,10 @@ name: Deploy
 on:
   release:
     types: [published]
-
+env:
+  NODE_ENV: production
 jobs:
   deploy:
-    variables:
-      NODE_ENV: production
     runs-on: ubuntu-latest
 
     strategy:
