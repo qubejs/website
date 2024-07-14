@@ -4,7 +4,7 @@ module.exports = {
   },
   apiPrefix: {
     '/api/v1/': {
-      prefix: process.env.API_PREFIX || 'https://service.homejrny.com',
+      prefix: process.env.API_PREFIX || 'https://app.service.homejrny.com',
     },
   },
   publicUrl: process.env.PUBLIC_URL || '',
