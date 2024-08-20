@@ -6,7 +6,7 @@ bodyClassName: sq-page--fixed-nav
 container: Documentation
 overrideTransition: true
 title: Events
-order: 3
+
 category: API
 itemTemplate: Event
 items:

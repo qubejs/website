@@ -4,9 +4,9 @@ bodyClassName: sq-page--fixed-nav
 layout: apps/qubejs/layouts/page-spa
 containerTemplate: Homepage
 container: ContentWithLeftNavigation
-title: Create your first page
+title: 2. Create your first page
 overrideTransition: true
-order: 3
+
 category: 1::Get Started
 items:
   - header: |

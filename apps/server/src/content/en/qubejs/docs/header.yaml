@@ -6,7 +6,7 @@ containerTemplate: Homepage
 container: ContentWithLeftNavigation
 title: Header
 overrideTransition: true
-order: 3
+
 category: 2::Components
 items:
   - header: |
