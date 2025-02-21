@@ -1,0 +1,18 @@
+title: QubeJs
+template: apps/core/templates/page
+className: qubejs-showcase
+bodyClassName: sq-page--fixed-nav
+layout: apps/qubejs/layouts/page-spa
+containerTemplate: Homepage
+items:
+    - component: ImageCardList
+      data:
+        - name: Xpentro
+          imageUrl: /dam/qubejs/img/xpentro.png
+          tag: Application
+          tagColor: primary
+          actionType: redirect
+          to: https://www.xpentro.com
+          options:
+            target: _blank
+

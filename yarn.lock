@@ -2489,27 +2489,27 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
-"@qubejs/cms@^0.5.0-beta.32":
-  version "0.5.0-beta.32"
-  resolved "https://registry.npmjs.org/@qubejs/cms/-/cms-0.5.0-beta.32.tgz"
-  integrity sha512-JUxctb0MNNGxr8A3srqrUQOm/ejoeiGz69n0EDOyFF3piqY0JYyuyvSV9UsCBrTw9Mrbm+aJugxhTGE08+w9hQ==
+"@qubejs/cms@^0.5.0-beta.38":
+  version "0.5.0-beta.38"
+  resolved "https://registry.npmjs.org/@qubejs/cms/-/cms-0.5.0-beta.38.tgz"
+  integrity sha512-X0Y1FK/KXs1rGbIPgswVtdUfsSxsjYK4xYdTwuKkIuCIm5hjnqTdEGFsNWMuGM38iXDrelfwWKpL4ZJid9R1FQ==
   dependencies:
     tslib "^2.3.0"
 
-"@qubejs/core@^0.5.0-beta.32":
-  version "0.5.0-beta.32"
-  resolved "https://registry.npmjs.org/@qubejs/core/-/core-0.5.0-beta.32.tgz"
-  integrity sha512-SdUWOG3cXornqAzqwhQuBJqEnCeaaXxIHeIQOO63Y6UbRRBqvGJzJ6NKh2Di8esCEVV7AodjFFPt4OmUOACLvg==
+"@qubejs/core@^0.5.0-beta.38":
+  version "0.5.0-beta.38"
+  resolved "https://registry.npmjs.org/@qubejs/core/-/core-0.5.0-beta.38.tgz"
+  integrity sha512-Cvrk3643Xa5LJBW5WW5eSCVZnGLlfqYNsOWylP/9nEsUV4UJT4bTskMuKBOmRbcRY4NfuVPHFxLx2N1m495o+g==
 
-"@qubejs/scripts@^0.5.0-beta.32":
-  version "0.5.0-beta.32"
-  resolved "https://registry.npmjs.org/@qubejs/scripts/-/scripts-0.5.0-beta.32.tgz"
-  integrity sha512-7Wu2NbWjepCJyFOO2hp+JlsZuRUrqcsGw5r67Shs/21NRj15MBrUaWw0FtZ+ez0mqWQPAHUsNfJC3RiSPw9x/A==
+"@qubejs/scripts@^0.5.0-beta.38":
+  version "0.5.0-beta.38"
+  resolved "https://registry.npmjs.org/@qubejs/scripts/-/scripts-0.5.0-beta.38.tgz"
+  integrity sha512-n1Ip4Yhn29nzXmDCjFsshu5WbikJAKVV7M++ZEtxEaL3k4AQTn+KKXaRpyj16BRmum4nELgdpiCL8Z+4D9UApA==
 
-"@qubejs/ui-material-base@^0.5.0-beta.32":
-  version "0.5.0-beta.32"
-  resolved "https://registry.npmjs.org/@qubejs/ui-material-base/-/ui-material-base-0.5.0-beta.32.tgz"
-  integrity sha512-VKRG++/USZKbYg8nnHrXsZ+PYF4f9Qu3Wii79NL9x6D79HlJ3zbN3eeFy/+vNrmPRkkdi3VE4xzx3mjyoGf4Vg==
+"@qubejs/ui-material-base@^0.5.0-beta.38":
+  version "0.5.0-beta.38"
+  resolved "https://registry.npmjs.org/@qubejs/ui-material-base/-/ui-material-base-0.5.0-beta.38.tgz"
+  integrity sha512-kxNwtVcFE3iIzAkVyIk3z7FTT7/7Wzulj6uFI3XgEcmANfajUk7LdU+HGxHl+U9JLf8KsxtRwuyiCxIgiDPt9g==
   dependencies:
     "@emotion/react" "^11.9.0"
     "@emotion/styled" "^11.8.1"
@@ -2548,10 +2548,10 @@
     underscore "^1.13.6"
     whatwg-fetch "^3.6.19"
 
-"@qubejs/web-react@^0.5.0-beta.32":
-  version "0.5.0-beta.32"
-  resolved "https://registry.npmjs.org/@qubejs/web-react/-/web-react-0.5.0-beta.32.tgz"
-  integrity sha512-C5tgRVHmXNxi6Zw5TFW11Gxr6/eXFntExwRnSeXspIA+q5pz3Gwoj7boKNTfjA3QzSkgCuiYvAVP8N3Qg589Ew==
+"@qubejs/web-react@^0.5.0-beta.38":
+  version "0.5.0-beta.38"
+  resolved "https://registry.npmjs.org/@qubejs/web-react/-/web-react-0.5.0-beta.38.tgz"
+  integrity sha512-S7RTJ6klB+R8cDcdb1pHDLscKk+4Va2ME8YwGXhRYLSxN+dA9wggauP08jSSdqj8oWKs6Z3/mEUYS0/KkLCJ7w==
   dependencies:
     "@reduxjs/toolkit" "^1.8.3"
     "@swc/helpers" "~0.5.0"
