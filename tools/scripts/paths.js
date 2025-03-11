@@ -9,6 +9,7 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 // config after eject: we're in ./config/
 module.exports = {
   webSrc: resolveApp('apps/web/src'),
+  docsDist: resolveApp('docs/dist'),
   server: resolveApp('apps/server'),
   dist: resolveApp('dist'),
   serverAssets: resolveApp('apps/server/src/assets'),

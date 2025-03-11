@@ -29,6 +29,10 @@ jobs:
           npm --no-git-tag-version version ${{  github.ref_name }}
       - name: Build
         run: |
+          cd docs
+          npm install
+          npm run build
+          cd ..
           yarn install --frozen-lockfile --production=false
           npx nx run-many -t dist
       - name: Archive server
