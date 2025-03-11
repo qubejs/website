@@ -12,12 +12,12 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
     console.log(chalk.green('building for version:') + chalk.cyan(VERSION));
     config.output.filename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
     config.output.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.js`;
-    config.plugins[5].options.filename = `[name]${
-      VERSION ? `.${VERSION}` : ''
-    }.css`;
-    config.plugins[5].options.chunkFilename = `[name]${
-      VERSION ? `.${VERSION}` : ''
-    }.css`;
+    const plugin = config.plugins.find(
+      (item) => item?.constructor?.name === 'MiniCssExtractPlugin'
+    );
+    console.log(plugin)
+    plugin.options.filename = `[name]${VERSION ? `.${VERSION}` : ''}.css`;
+    plugin.options.chunkFilename = `[name]${VERSION ? `.${VERSION}` : ''}.css`;
   }
   // Update the webpack config as needed here.
   // e.g. `config.plugins.push(new MyPlugin())`
@@ -43,13 +43,14 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
       return content;
     }
     return `
-      @import "apps/web/src/styles/themes/main/abstract/_variables.scss";
+       @import "apps/web/src/styles/themes/main/abstract/_variables.scss";
       @import "apps/web/src/styles/mixins/index.scss";
     ${content}
   `;
   };
+  // console.log(typeWeb.sassOptions.includePaths);
   // console.log(path.resolve('apps/web/src/styles'));
   typeWeb.sassOptions.includePaths.push(path.resolve('apps/web/src/styles'));
-  // typeWeb.sassOptions.includePaths = [path.resolve('apps/web/src/styles')];
+  // typeWeb.sassOptions.includePaths.push(path.resolve('apps'));
   return config;
 });

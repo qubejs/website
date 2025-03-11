@@ -16,6 +16,9 @@
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps", "apps/web/src/styles"]
+        },
         "assets": [
           "apps/web/src/favicon.png",
           "apps/web/src/assets",
@@ -69,6 +72,9 @@
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps", "apps/web/src/styles"]
+        },
         "assets": [
           "apps/web/src/favicon.png",
           "apps/web/src/assets",
