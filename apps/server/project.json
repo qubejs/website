@@ -21,7 +21,6 @@
           "apps/server/src/content",
           "apps/server/src/dam"
         ],
-        "isolatedConfig": true,
         "generatePackageJson": true,
         "webpackConfig": "apps/server/webpack.config.js"
       },
@@ -52,7 +51,6 @@
             "output": "./assets"
           }
         ],
-        "isolatedConfig": true,
         "generatePackageJson": true,
         "webpackConfig": "apps/server/webpack.config.js"
       },

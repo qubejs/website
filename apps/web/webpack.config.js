@@ -43,8 +43,8 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
       return content;
     }
     return `
-      @import "themes/main/abstract/_variables.scss";
-      @import "mixins/index.scss";
+      @import "apps/web/src/styles/themes/main/abstract/_variables.scss";
+      @import "apps/web/src/styles/mixins/index.scss";
     ${content}
   `;
   };

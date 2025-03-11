@@ -32,7 +32,6 @@
         ],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
@@ -86,7 +85,6 @@
         ],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
@@ -127,7 +125,6 @@
         "assets": ["apps/web/src/favicon.png", "apps/web/src/assets"],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
