@@ -31,6 +31,12 @@ function copyFolderRecursiveSync(
   if (ignore.indexOf(path.basename(source)) > -1) {
     return;
   }
+  // console.log('@@@@' + target);
+  if (!excludeFolder) {
+    if (!fs.existsSync(target)) {
+      fs.mkdirSync(target);
+    }
+  }
   var targetFolder;
   if (!excludeFolder) {
     // Check if folder needs to be created or integrated
@@ -40,6 +46,9 @@ function copyFolderRecursiveSync(
     }
   } else {
     targetFolder = target;
+    if (!fs.existsSync(targetFolder)) {
+      fs.mkdirSync(targetFolder);
+    }
   }
   // Copy
   if (fs.lstatSync(source).isDirectory()) {
@@ -47,7 +56,7 @@ function copyFolderRecursiveSync(
     files.forEach(function (file) {
       var curSource = path.join(source, file);
       if (fs.lstatSync(curSource).isDirectory()) {
-        copyFolderRecursiveSync(curSource, targetFolder, excludeFolder);
+        copyFolderRecursiveSync(curSource, targetFolder, false);
       } else {
         if (ignore.indexOf(path.basename(curSource)) === -1) {
           copyFileSync(curSource, targetFolder);
@@ -61,6 +70,10 @@ console.log(chalk.green('copy assets started'));
 copyFolderRecursiveSync(
   `${paths.server}/src/dam`,
   `${paths.distWeb}`, false
+);
+copyFolderRecursiveSync(
+  `${paths.docsDist}`,
+  `${paths.distWeb}/docs`, true
 );
 copyFileSync(
   `${paths.distWeb}/index.html`,
