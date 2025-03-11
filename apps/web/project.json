@@ -16,6 +16,9 @@
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps", "apps/web/src/styles"]
+        },
         "assets": [
           "apps/web/src/favicon.png",
           "apps/web/src/assets",
@@ -32,7 +35,6 @@
         ],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
@@ -70,20 +72,25 @@
         "outputHashing": "media",
         "main": "apps/web/src/main.tsx",
         "tsConfig": "apps/web/tsconfig.app.json",
-        "assets": ["apps/web/src/favicon.png", "apps/web/src/assets",
-        {
-          "glob": "_headers",
-          "input": "apps/web/src",
-          "output": "./"
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps", "apps/web/src/styles"]
         },
-        {
-          "glob": ".htaccess",
-          "input": "apps/web/src",
-          "output": "./"
-        }],
+        "assets": [
+          "apps/web/src/favicon.png",
+          "apps/web/src/assets",
+          {
+            "glob": "_headers",
+            "input": "apps/web/src",
+            "output": "./"
+          },
+          {
+            "glob": ".htaccess",
+            "input": "apps/web/src",
+            "output": "./"
+          }
+        ],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
@@ -124,7 +131,6 @@
         "assets": ["apps/web/src/favicon.png", "apps/web/src/assets"],
         "styles": [],
         "scripts": [],
-        "isolatedConfig": true,
         "webpackConfig": "apps/web/webpack.config.js"
       },
       "configurations": {
@@ -163,7 +169,6 @@
     "build-themes-local": {
       "command": "webpack --config apps/web/webpack.theme.js"
     },
-
     "build-server": {
       "command": "node tools/scripts/build-web.js",
       "dependsOn": ["build-dist", "build-scss", "build-themes"],
@@ -190,7 +195,6 @@
       "command": "node tools/scripts/dist-local.js",
       "dependsOn": ["dist"]
     },
-
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "dependsOn": ["build-themes-local"],
@@ -212,11 +216,8 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/web/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
@@ -228,14 +229,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/web/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/web/jest.config.ts"
       }
     }
   },
