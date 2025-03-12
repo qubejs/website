@@ -11,7 +11,17 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.32.2",
+    "@astrojs/starlight-tailwind": "^3.0.0",
+    "@tailwindcss/vite": "^4.0.12",
     "astro": "^5.1.5",
-    "sharp": "^0.32.5"
+    "autoprefixer": "^10.4.21",
+    "flowbite": "^3.1.2",
+    "sass": "^1.85.1",
+    "sharp": "^0.32.5",
+    "starlight-theme-catppuccin": "^2.0.0",
+    "tailwindcss": "^4.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
   }
 }
