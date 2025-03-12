@@ -1,27 +1,36 @@
 ---
-title: Hey Wassup
-description: Get started building your docs site with Starlight.
-layout: ../../layouts/Layout.astro
+title: The Qubejs Framework
+description:
+  Technical Documentation, examples, guides and resources for the Qubejs Framework
 template: splash
 hero:
-  tagline: Welcome to the layout
+  tagline: Build Modular, CMS-driven Flutter Apps. At Scale.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/logo.svg
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /intro
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components'
 
 ## Next steps
 
-<h1 class="text-1xl font-bold underline">
-  Hello world!
-</h1>
-
+<CardGrid>
+  <Card title="Concepts" icon="star">
+    [Learn](/concepts) the fundamental concepts of Qubejs
+  </Card>
+  <Card title="Guides" icon="document">
+    [Take a deeper dive](/guides) into various aspects of the Framework
+  </Card>
+  <Card title="Examples" icon="setting">
+    [See how](/examples) various apps were built with Qubejs
+  </Card>
+  <Card title="Framework" icon="open-book">
+    [Explore](/framework) the packages that are part of the Qubejs Framework
+  </Card>
+  <Card title="Blog" icon="open-book">
+    [Read the Blog](/blog) to follow updates on the Qubejs Framework
+  </Card>
+</CardGrid>

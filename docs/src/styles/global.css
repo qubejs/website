@@ -1,4 +1,0 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
-@config "../../tailwind.config.mjs";
-@config "../../postcss.config.mjs";
